@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 46px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            
+            gap: 40px;
+        }
+        .card{
+            width: 18%;
+            text-align: center;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            border-radius: 10px 10px 10px 10px;
+        }
+        .card img{
+            width: 100%;
+            border-radius:10px 10px 0 0;
+            margin-top: 5px;
+        }
+        .card .logo{
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Strategic Investors</h1>
+    <div class="container">
+
+    </div>
+</body>
+<script>
+    
+    let container=document.querySelector(".container")
+   
+    let imgArray=[
+        {img: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg", name: "Vijay Shekhar Sharma", para: "Founder & CEO", company: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+        {img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",name:"Kunal Shah",para:"Founder", company:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"},
+        
+        {img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",name:"Amrish Rau",para:"CEO",company:"https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"},
+        {img:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",name:"Sampad Swain",para:"Co-Founder & CEO",company:"https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"}
+        
+    ]
+
+    let logoArray=[]
+    for(let i=0;i<4;i++){
+    let div=document.createElement("div")
+    div.className="card"
+    let img=document.createElement("img")
+    img.src=imgArray[i].img
+    let h3=document.createElement("h3")
+    h3.innerText= imgArray[i].name
+    let p=document.createElement("p")
+    p.innerText= imgArray[i].para
+    div.append(img)
+    div.append(h3)
+    div.append(p)
+    
+    let companyimg=document.createElement("img")
+    companyimg.className="logo"
+    companyimg.src=imgArray[i].company
+    div.append(companyimg)
+    container.append(div)
+    }
+
+    
+</script>
+</html>
